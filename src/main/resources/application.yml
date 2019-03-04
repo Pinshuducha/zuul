@@ -1,0 +1,15 @@
+server:
+  port: 8080
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  routes:
+    boot:
+      path: /hello/**  #可以区分请求的是哪个实例
+      serviceId: boot #实例名称，如果是要负载，多个的实例的名称要统一
+      stripPrefix: false
+      sensitive-headers:
+boot:
+  ribbon:
+    listOfServers: http://127.0.0.1:8000, http://127.0.0.1:8081  #实现请求的负载均衡，多个实例使用", "隔开
