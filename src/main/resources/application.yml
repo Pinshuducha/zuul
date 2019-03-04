@@ -6,10 +6,10 @@ zuul:
     socket-timeout-millis: 60000
   routes:
     boot:
-      path: /hello/**  #可以区分请求的是哪个实例
-      serviceId: boot #实例名称，如果是要负载，多个的实例的名称要统一
-      stripPrefix: false
+      path: /hello/**  #鍙互鍖哄垎璇锋眰鐨勬槸鍝釜瀹炰緥
+      serviceId: boot #瀹炰緥鍚嶇О锛屽鏋滄槸瑕佽礋杞斤紝澶氫釜鐨勫疄渚嬬殑鍚嶇О瑕佺粺涓�
+      stripPrefix: true
       sensitive-headers:
 boot:
   ribbon:
-    listOfServers: http://127.0.0.1:8000, http://127.0.0.1:8081  #实现请求的负载均衡，多个实例使用", "隔开
+    listOfServers: http://127.0.0.1:8000, http://127.0.0.1:8081  #瀹炵幇璇锋眰鐨勮礋杞藉潎琛★紝澶氫釜瀹炰緥浣跨敤", "闅斿紑
