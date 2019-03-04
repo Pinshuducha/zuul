@@ -8,7 +8,7 @@ zuul:
     boot:
       path: /hello/**  #可以区分请求的是哪个实例
       serviceId: boot #实例名称，如果是要负载，多个的实例的名称要统一
-      stripPrefix: true
+      stripPrefix: false
       sensitive-headers:
 boot:
   ribbon:
