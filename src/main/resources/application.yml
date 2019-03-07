@@ -6,7 +6,7 @@ zuul:
     socket-timeout-millis: 60000
   routes:
     boot:
-      path: /hello/**  #可以区分请求的是哪个实例
+      path: /hello/**  #请求url通配
       serviceId: boot #实例名称，如果是要负载，多个的实例的名称要统一
       stripPrefix: false
       sensitive-headers:
